@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import { Link as RouterLink } from 'react-router-dom';
 import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material';
 import { Google } from '@mui/icons-material';
@@ -8,10 +6,7 @@ import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { startGoogleSingIn, startLoginWithEmailPassword  } from '../../store/auth';
 import { useMemo } from 'react';
->>>>>>> 2111d71 (authentication created)
 
-import {Typography, TextField} from '@mui/material'
-import Grid from '@mui/material/Grid2'
 
 export const LoginPage = () => {
 
@@ -40,51 +35,9 @@ export const LoginPage = () => {
   }
 
   return (
-<<<<<<< HEAD
-    <Grid
-      container
-      spacing={0}
-      direction='column'
-      alignContent='center'
-      justifyContent='center'
-      sx={{minHeight: '100dvh', backgroundColor: 'primary.main', padding: 4 }}>
-      
-        <Grid item 
-        className='box-shadow'
-        xs = {3}
-        sx={{backgroundColor: 'white', padding: 3, borderRadius: 2}}>
-
-            <Typography varaint='h5' sx={{mb:1}}>Login</Typography>
-
-            <form>
-
-              <Grid container>
-
-                <Grid item>
-                  <TextField 
-                    type='email' 
-                    label='email' 
-                    placeholder='example@example.com'
-                    fullWidth/>
-                </Grid>
-
-                <Grid item>
-                  <TextField 
-                    type='password' 
-                    label='password' 
-                    placeholder='your password'
-                    fullWidth/>
-                </Grid>
-
-              </Grid>
-
-            </form>
-
-        </Grid>
-=======
     <AuthLayout title="Login">
       <form 
-        onSubmit={onSubmit}
+        onSubmit={onSubmit} 
         className='animate__animated animate__fadeIn animate__faster'
       >
           <Grid container>
@@ -155,8 +108,12 @@ export const LoginPage = () => {
                 Create an Account
               </Link>
             </Grid>
->>>>>>> 2111d71 (authentication created)
 
-    </Grid>
+          </Grid>
+
+
+        </form>
+
+    </AuthLayout>
   )
 }
