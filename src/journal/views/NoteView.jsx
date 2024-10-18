@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { DeleteOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material';
 import { Button, Grid, IconButton, TextField, Typography } from '@mui/material';
 import { ImageGallery } from '../components'
@@ -49,11 +50,23 @@ export const NoteView = () => {
 
   return (
     <Grid 
+=======
+import { SaveOutlined } from '@mui/icons-material';
+import { Button, Grid, TextField, Typography } from '@mui/material';
+import { ImageGallery } from '../components'
+
+
+export const NoteView = () => {
+  return (
+    <Grid 
+        className='animate__animated animate__fadeIn animate__faster'
+>>>>>>> f3d70fe6aee5f01b4b55c56dd95c4dda7ee5f204
         container 
         direction='row' 
         justifyContent='space-between' 
         alignItems='center' 
         sx={{ mb: 1 }}
+<<<<<<< HEAD
         className='animate__animated animate__fadeIn animate__faster'
     >
         <Grid item>
@@ -86,6 +99,16 @@ export const NoteView = () => {
             >
                 <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
                 Save
+=======
+    >
+        <Grid item>
+            <Typography fontSize={ 39 } fontWeight='light' >August, 28 of 2024</Typography>
+        </Grid>
+        <Grid item>
+            <Button color="primary" sx={{ padding: 2 }}>
+                <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
+                Guardar
+>>>>>>> f3d70fe6aee5f01b4b55c56dd95c4dda7ee5f204
             </Button>
         </Grid>
 
@@ -94,6 +117,7 @@ export const NoteView = () => {
                 type="text"
                 variant="filled"
                 fullWidth
+<<<<<<< HEAD
                 placeholder="Write a Title"
                 label="Title"
                 sx={{ border: 'none', mb: 1 }}
@@ -101,11 +125,19 @@ export const NoteView = () => {
                 value={title}
                 onChange={onInputChange}
             />
+=======
+                placeholder="Ingrese un título"
+                label="Título"
+                sx={{ border: 'none', mb: 1 }}
+            />
+
+>>>>>>> f3d70fe6aee5f01b4b55c56dd95c4dda7ee5f204
             <TextField 
                 type="text"
                 variant="filled"
                 fullWidth
                 multiline
+<<<<<<< HEAD
                 placeholder="What happened today?"
                 minRows={ 5 }
                 name='body'
@@ -131,3 +163,16 @@ export const NoteView = () => {
     </Grid>
   )
 }
+=======
+                placeholder="¿Qué sucedió en el día de hoy?"
+                minRows={ 5 }
+            />
+        </Grid>
+
+        {/* Image gallery */}
+        <ImageGallery />
+
+    </Grid>
+  )
+}
+>>>>>>> f3d70fe6aee5f01b4b55c56dd95c4dda7ee5f204
