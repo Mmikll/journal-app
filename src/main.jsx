@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -16,18 +15,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </BrowserRouter>
     </Provider>
   </React.StrictMode>
-=======
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './Styles.css'
-import { JournalApp } from './JournalApp'
-import { BrowserRouter } from 'react-router-dom'
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <JournalApp/>
-    </BrowserRouter> 
-  </StrictMode>,
->>>>>>> f3d70fe6aee5f01b4b55c56dd95c4dda7ee5f204
 )

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import { IconButton } from '@mui/material';
 import { AddOutlined } from '@mui/icons-material';
@@ -44,18 +43,3 @@ export const JournalPage = () => {
     </JournalLayout>
   )
 }
-=======
-import { MailOutline } from "@mui/icons-material"
-import { Typography } from "@mui/material"
-
-export const JournalPage = () => {
-  return (
-    <>
-      <Typography variant='h2'>Journal Page</Typography>
-    </>
-
-  )
-}
-
-
->>>>>>> f3d70fe6aee5f01b4b55c56dd95c4dda7ee5f204

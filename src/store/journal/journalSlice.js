@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-<<<<<<< HEAD
 export const journalSlice = createSlice({
     name: 'journal',
     initialState: { 
@@ -74,12 +73,3 @@ export const {
     setSaving, 
     updateNote, 
 } = journalSlice.actions;
-=======
-export const jorunalSlice = createSlice({
-    name: 'jorunal',
-    initialState: {  },
-    reducers: {  },
-});
-
-export const {} = jorunalSlice.actions;
->>>>>>> f3d70fe6aee5f01b4b55c56dd95c4dda7ee5f204
