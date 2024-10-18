@@ -20,7 +20,7 @@ export const loadNotes = async( uid = '') => {
         return notes;
 
     } catch (err) {
-        console.log(`There was the following error: ${err}`)
+        console.log(`There was an error: ${err}`)
     }
 
 }

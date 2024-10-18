@@ -13,8 +13,7 @@ const formData = {
   email: '',
   password: ''
 }
-
-
+//formData is implement because when email and password is declared in the params, the useEffect rerender the state therefore it declared again and agin the params, and in each declare it is in a different memo space, so we fix this by passing just one reference.
 export const LoginPage = () => {
 
   const { status, errorMessage } = useSelector( state => state.auth );

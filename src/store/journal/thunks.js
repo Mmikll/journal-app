@@ -1,9 +1,8 @@
 
 import { FirebaseDB } from '../../firebase/config'
-import { doc, collection, setDoc } from 'firebase/firestore/lite';
-import { addNewEmptyNote, savingNewNote, setActiveNote, setNote } from './';
-import { loadNotes } from '../../helpers';
-
+import { doc, collection, setDoc, deleteDoc } from 'firebase/firestore/lite';
+import { addNewEmptyNote, deleteNoteById, savingNewNote, setActiveNote, setNote, setPhotosToActiveNote, setSaving, updateNote } from './';
+import { fileUpload, loadNotes } from '../../helpers';
 
 export const startNewNote = () =>{
     return async(dispatch, getState) =>{
@@ -50,5 +49,63 @@ export const startLoadingNotes = () => {
 
         dispatch(setNote(notes))
         
+    }
+}
+
+export const startSaveNote = () =>{
+    return async ( dispatch, getState ) =>{
+
+        dispatch( setSaving() )
+
+        try {
+            const { uid } = getState().auth
+
+            const { active:note } = getState().journal
+    
+            const noteToFirestore = {...note}
+            
+            delete noteToFirestore.id
+    
+            const docRef = doc(FirebaseDB, `${uid}/journal/notes/${note.id}`)
+    
+            await setDoc( docRef, noteToFirestore, { merge : true}) 
+
+            dispatch(updateNote(note))
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+}
+
+export const startUploadingFiles = (files = []) =>{
+    return async ( dispatch ) =>{
+        dispatch( setSaving() )
+        
+        //await fileUpload( files[0] )
+
+        const fileUploadPromises = []
+
+        for (const file of files) {
+            fileUploadPromises.push( fileUpload( file ))
+        }
+
+        const photosUrls = await Promise.all(fileUploadPromises)
+
+        dispatch( setPhotosToActiveNote(photosUrls))
+    }
+} 
+
+export const startDeletingNote = () =>{
+    return async ( dispatch, getState ) =>{
+
+        const {uid} = getState().auth
+        const {active:note} = getState().journal
+
+        const docRef = doc(FirebaseDB, `${uid}/journal/notes/${note.id}`)
+
+        await deleteDoc(docRef)
+
+        dispatch( deleteNoteById(note.id))
     }
 }
